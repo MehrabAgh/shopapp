@@ -12,7 +12,7 @@ class testClass extends React.Component {
     changeState = () => {
         this.setState({ color: 'white' })
     }
-    calculate = () => {
+    static calculate = () => {
         this.setState({ result : 10 + 10})
     }
 
@@ -35,6 +35,10 @@ class testClass extends React.Component {
                 <span> Use Prop : color =  {this.props.color}</span>
                 <div>
                     <button onClick={this.calculate}>Show</button>
+                    <form>
+                        <input type={'text'} onChange={e => this.setState({number_1:e.target.value})}/>
+                        <button onClick={console.log(this.state)}>Print State Classes</button>
+                    </form>
                     <h2>{this.state.result}</h2>
                 </div>
             </>

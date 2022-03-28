@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import Testclass from './OtherPage/testClass';
+import Testclass from './pages/testClass';
 function App() {
+  const [select, setselect] = useState("");
   return (
     <div>
       <h2 className='xx'>Hello React {name}</h2>
@@ -13,9 +14,18 @@ function App() {
       <Testclass color="blue" />
       <button onClick={() => pp("data printed")}>Print</button>
       <Statment enable={false} />
-      <RenderID></RenderID>
-      <Form></Form>
-      <FormAdvanced/>
+      <>
+        <RenderID></RenderID>
+        <Form></Form>
+        <FormAdvanced />
+      </>
+      <div>
+        <select value={select} onChange={e => setselect(e.target.value)}>
+          <option value={'C#'}>C#</option>
+          <option value={'C++'}>C++</option>
+          <option value={'js'}>javaScript</option>
+        </select>
+      </div>
     </div>
   );
 }
@@ -32,16 +42,11 @@ const TimeShow = () => {
     <p>{t}</p>
   )
 }
-
 //
-
 const pp = (n) => {
   console.log(n)
 }
-
 //
-
-
 const Statment = (props) => {
 
   const StatmentV2 = () => {
@@ -70,26 +75,21 @@ const Statment = (props) => {
   }
 
 }
-
 //
-
 const testList = ['m', 'e', 'h', 'r', 'a', 'b'];
 const listId = [{ id: 1, name: 'Ali' }, { id: 2, name: 'mmd' }]
-
-const RenderID = () => {  
+const RenderID = () => {
   return (
     <>
-      <h3>{listId.map((i) => <Re key={i.id} id={i.id} name={i.name}></Re>)}</h3>     
+      <h3>{listId.map((i) => <Re key={i.id} id={i.id} name={i.name}></Re>)}</h3>
     </>
   )
 }
-
-const Re = (props) =>{
-  return(
-  <><h3>{props.id}: {props.name} </h3></>
+const Re = (props) => {
+  return (
+    <><h3>{props.id}: {props.name} </h3></>
   )
 }
-
 const RenderList = () => {
   return testList.map((n) => <li>{n}</li>)
 }
@@ -102,44 +102,44 @@ function Test(props) {
   )
 }
 
-function Form(){
+function Form() {
   const [getName, setName] = useState("sample");
   const submited = () => {
-//    event.preventDefault();
+    //    event.preventDefault();
     alert(`The name you entered was: ${getName}`)
   }
-  return(
+  return (
     <div>
       <form action='#' autoComplete='false' onSubmit={submited}>
         <b>Enter Name : </b>
-        <input onChange={(e)=>setName(e.target.value)} value={getName} type={'text'}/>        
+        <input onChange={(e) => setName(e.target.value)} value={getName} type={'text'} />
       </form>
       <h1>Hello {getName}</h1>
     </div>
   )
 }
 
-function FormAdvanced(){
-  const [getInputs, setInputs] = useState({}); 
+function FormAdvanced() {
+  const [getInputs, setInputs] = useState({});
 
-  const HandleChange = (ev) =>{
+  const HandleChange = (ev) => {
     const name = ev.target.name;
     const value = ev.target.value;
-    setInputs(s => ({...s , [name]:value}))
+    setInputs(s => ({ ...s, [name]: value }))
   }
 
-  return(
+  return (
     <div>
       <form>
         <b>UserName:</b>
-        <input type='text' name='UserName' onChange={HandleChange}/>
-        <br/>
+        <input type='text' name='UserName' onChange={HandleChange} />
+        <br />
         <b>Password:</b>
-        <input type='password' name='Password' onChange={HandleChange}/>
-        <br/>
-        <textarea onChange={HandleChange}>
-        </textarea>        
-        <input type='submit' onClick={console.log(getInputs)}/>
+        <input type='password' name='Password' onChange={HandleChange} />
+        <br />
+        <textarea name='description' onChange={HandleChange}>
+        </textarea>
+        <input type='submit' onClick={console.log(getInputs)} />
         <b>{getInputs.UserName}</b>
       </form>
     </div>
