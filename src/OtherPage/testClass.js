@@ -32,7 +32,7 @@ class testClass extends React.Component {
             <>
                 <h3>hello Class Component</h3>
                 <summary> Use State :  <button onClick={this.changeState}> color </button> {this.state.color}</summary>
-                <summary> Use Prop : color =  {this.props.color}</summary>
+                <span> Use Prop : color =  {this.props.color}</span>
                 <div>
                     <button onClick={this.calculate}>Show</button>
                     <h2>{this.state.result}</h2>
