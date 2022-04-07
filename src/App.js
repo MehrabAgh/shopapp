@@ -1,151 +1,83 @@
 import React, { useState } from 'react';
 import './App.css';
-import Testclass from './pages/testClass';
-function App() {
-  const [select, setselect] = useState("");
-  return (
-    <div>
-      <h2 className='xx'>Hello React {name}</h2>
-      {testCond}
-      <ul>
-        <Test use="Hello Props" />
-      </ul>
-      <TimeShow />
-      <Testclass color="blue" />
-      <button onClick={() => pp("data printed")}>Print</button>
-      <Statment enable={false} />
-      <>
-        <RenderID></RenderID>
-        <Form></Form>
-        <FormAdvanced />
-      </>
-      <div>
-        <select value={select} onChange={e => setselect(e.target.value)}>
-          <option value={'C#'}>C#</option>
-          <option value={'C++'}>C++</option>
-          <option value={'js'}>javaScript</option>
-        </select>
-      </div>
-    </div>
-  );
-}
-//#region Start_Components
-const name = <em>Mehrab Aghaee</em>
-let x = 10;
-let testCond = <strong>{x < 1 ? 'Good' : 'Bad'}</strong>
+import Carousel_Page from './Pages/Carousel_Page';
+import Header from './Pages/Header';
+import { Rating } from 'react-simple-star-rating'
+import Footer from './Pages/Footer';
 
-//
 
-const TimeShow = () => {
-  let t = new Date().toTimeString();
-  return (
-    <p>{t}</p>
-  )
-}
-//
-const pp = (n) => {
-  console.log(n)
-}
-//
-const Statment = (props) => {
+const App = () => {
 
-  const StatmentV2 = () => {
+  const Renderitem = (props) => {
+    const [rating, setRating] = useState(0)
+    const handleRating = (rate) => {
+      setRating(rate)
+    }
     return (
-      <>
-        {props.enable &&
-          <h1>
-            Enable State 2
-          </h1>
+      <div className='Card' style={{ borderRadius: '10px', backgroundColor: 'white', borderWidth: 'medium', borderStyle: 'solid', borderColor: 'rgb(240, 240, 240)', width: '20%', overflow: 'hidden', margin: '10px' }}>
+        {props.new &&
+          <div style={{ position: 'absolute', backgroundColor: 'green', color: 'white', width: '3%', margin: '5px', borderRadius: '3px' }}>حراج</div>
         }
-
-      </>
+        <img style={{ width: '140%', marginTop: '20px', borderRadius: '3px' }} src={require('./Media/fifa-18-800x450.jpg')} alt={'ds'} />
+        <span>{props.Name}</span>
+        <div style={{ marginTop: '10px', marginBottom: '10px' }}>
+          <Rating size={20} onClick={handleRating} ratingValue={rating} /* Available Props */ />
+        </div>
+        <div style={{ marginTop: '30px', marginBottom: '30px' }}>
+          <span>قیمت :
+            {props.off
+              ? <>
+                <s style={{ color: 'gray' }}>{props.price}</s>
+                <br/>
+                <b style={{ color: 'red' }}>{(props.price * props.offer)/100}</b>
+              </>
+              : <b style={{ color: 'red' }}>{props.price}</b>}
+تومان            </span>
+        </div>
+      </div>
     )
   }
-  if (props.enable) {
-    return (
-      <>
-        <StatmentV2 />
-        <b>enable</b>
-      </>
-    )
-
-  } else {
-    return <b>disable</b>
-
-  }
-
-}
-//
-const testList = ['m', 'e', 'h', 'r', 'a', 'b'];
-const listId = [{ id: 1, name: 'Ali' }, { id: 2, name: 'mmd' }]
-const RenderID = () => {
-  return (
-    <>
-      <h3>{listId.map((i) => <Re key={i.id} id={i.id} name={i.name}></Re>)}</h3>
-    </>
-  )
-}
-const Re = (props) => {
-  return (
-    <><h3>{props.id}: {props.name} </h3></>
-  )
-}
-const RenderList = () => {
-  return testList.map((n) => <li>{n}</li>)
-}
-function Test(props) {
-  return (
-    <>
-      <h1>{props.use}</h1>
-      <RenderList></RenderList>
-    </>
-  )
-}
-
-function Form() {
-  const [getName, setName] = useState("sample");
-  const submited = () => {
-    //    event.preventDefault();
-    alert(`The name you entered was: ${getName}`)
-  }
+  let data = [
+    { Name: 'fifa', price: 10000, categori: '', off: false },
+    { Name: 'fifa', price: 10000, categori: '', off: false },
+    { Name: 'fifa', price: 10000, categori: '', off: false },
+    { Name: 'fifa', price: 10000, categori: '', off: false , offer:20},
+    { Name: 'fifa', price: 10000, categori: '', off: true , offer:10},
+    { Name: 'fifa', price: 500000, categori: '', off: true , offer:50},
+    { Name: 'fifa', price: 10000, categori: '', off: false },
+    { Name: 'fifa', price: 10000, categori: '', off: false }
+  ]
   return (
     <div>
-      <form action='#' autoComplete='false' onSubmit={submited}>
-        <b>Enter Name : </b>
-        <input onChange={(e) => setName(e.target.value)} value={getName} type={'text'} />
-      </form>
-      <h1>Hello {getName}</h1>
+      <Header />
+      <Carousel_Page />
+      <div style={{ marginTop:'10%'}}>
+      <h1>پیشنهادی ما</h1>
+      <div className='navbar'>
+        <ol>
+          <li>جدید ترین ها </li>
+          <li>پر بازدید ترین ها</li>
+          <li>پر فروش ترین ها</li>
+        </ol>
+      </div>
+      </div>
+      <div className='Items'>
+        {data.map((d) => {
+          return (
+            <Renderitem Name={d.Name} price={d.price} off={d.off} offer={d.offer}/>
+          )
+        })}
+      </div>
+
+      <div style={{ backgroundColor: 'aqua', width: '100%', paddingTop: '17%' }}>1</div>
+      <div>
+
+      </div>
+
+      <Footer />
     </div>
-  )
-}
+    
+  );
+};
 
-function FormAdvanced() {
-  const [getInputs, setInputs] = useState({});
-
-  const HandleChange = (ev) => {
-    const name = ev.target.name;
-    const value = ev.target.value;
-    setInputs(s => ({ ...s, [name]: value }))
-  }
-
-  return (
-    <div>
-      <form>
-        <b>UserName:</b>
-        <input type='text' name='UserName' onChange={HandleChange} />
-        <br />
-        <b>Password:</b>
-        <input type='password' name='Password' onChange={HandleChange} />
-        <br />
-        <textarea name='description' onChange={HandleChange}>
-        </textarea>
-        <input type='submit' onClick={console.log(getInputs)} />
-        <b>{getInputs.UserName}</b>
-      </form>
-    </div>
-  )
-
-}
-//
-//#endregion
 export default App;
