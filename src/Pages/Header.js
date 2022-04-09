@@ -14,7 +14,7 @@ const List = [
     "درباره ما"
 ]
 let tstList = List.reverse();
-
+/* eslint-disable jsx-a11y/anchor-is-valid */
 const Header = () => {
 
     const [Time, setTime] = useState('');

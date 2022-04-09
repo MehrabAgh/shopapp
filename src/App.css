@@ -1,6 +1,16 @@
 .App {
     text-align: center;
 }
+.Description{
+    flex-wrap: wrap;
+    display: flex;    
+    justify-content: center;
+}
+.Description div{
+    width: 15em;
+    font-size: 18px;       
+    margin: 50px;     
+}
 .navbar ol{
     display: flex;
     justify-content: center;    
@@ -54,12 +64,36 @@
 .GroupMain{
     display: grid;    
     grid-template-columns: auto auto auto;
-    width: 50%;    
+    width: 50%;        
     position: absolute;
     top: 40em;
-    left: 25em;
+    left: 23%;
+    margin:auto;
+}
+.MainCate{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+    justify-content: space-around;
+}
+.CategoryStl{    
+    background-color: darksalmon; 
+    border-radius: 80px;        
+    padding: 20px;    
+    width: 7em;        
+    height: 7em;
+    overflow: hidden;   
     margin: auto;
 }
+.CategoryStl img{
+    width: 200px;        
+}
+
+.CategoryStl img:hover{
+    cursor: pointer;
+}
+
 .grid-item{
     background-color: rgba(255, 255, 255, 0.8);    
     padding: 90px;

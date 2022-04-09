@@ -24,19 +24,17 @@ const captionStyle = {
 const Carousel_Page = () => {
   return (
     <div>
-      <Carousel
-        captionStyle={captionStyle}
+      <Carousel        
         data={data}
         time={4000}
         width="2100px"
-        height="540px"
+        height="490px"
         automatic={true}
-        slideBackgroundColor="darkgrey"
-        dots={true}
+        slideBackgroundColor="darkgrey"        
         style={{
           textAlign: "center",
           maxWidth: "2100px",
-          maxHeight: "540px",
+          maxHeight: "490px",
         }} />
         <div className='GroupMain'>
           <div className='grid-item' style={{backgroundColor:'tomato'}}>2</div>
