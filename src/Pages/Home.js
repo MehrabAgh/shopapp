@@ -1,24 +1,36 @@
 /* eslint-disable react/jsx-pascal-case */
-import React from 'react';
+import React, { memo , useState } from 'react';
 import Carousel_Page from './Carousel_Page';
-import Header from './Header';
 import Footer from './Footer';
 import Cards from './Cards';
 /* eslint-disable jsx-a11y/anchor-is-valid */
 const Home = () => {
-
+    const [More, setMore] = useState(false);
+    const [ShowMore, setShowMore] = useState(true);
     let data = [
         { Name: 'fifa', price: 10000, categori: '', off: false, nameImg: 'fifa-18-800x450.jpg',rate:20 },
         { Name: 'fifa', price: 10000, categori: '', off: false, nameImg: 'fifa-18-800x450.jpg',rate:45},
         { Name: 'fifa', price: 10000, categori: '', off: false, nameImg: 'fifa-18-800x450.jpg',rate:10 },
-        { Name: 'fifa', price: 10000, categori: '', off: false, offer: 20, nameImg: 'fifa-18-800x450.jpg',rate:100 },
-        { Name: 'fifa', price: 10000, categori: '', off: true, offer: 10, nameImg: 'fifa-18-800x450.jpg',rate:60 },
-        { Name: 'fifa', price: 500000, categori: '', off: true, offer: 50, nameImg: 'fifa-18-800x450.jpg',rate:40 },
+        { Name: 'fifa', price: 10000, categori: '', off: true, offer: 20, nameImg: 'fifa-18-800x450.jpg',rate:100 ,new :true},
+        { Name: 'fifa', price: 10000, categori: '', off: true, offer: 10, nameImg: 'fifa-18-800x450.jpg',rate:60 ,new :true },
+        { Name: 'fifa', price: 500000, categori: '', off: true, offer: 50, nameImg: 'fifa-18-800x450.jpg',rate:40,new :true },
+        { Name: 'fifa', price: 10000, categori: '', off: false, nameImg: 'fifa-18-800x450.jpg',rate:70 },
+        { Name: 'fifa', price: 10000, categori: '', off: false, nameImg: 'fifa-18-800x450.jpg',rate: 30}, 
         { Name: 'fifa', price: 10000, categori: '', off: false, nameImg: 'fifa-18-800x450.jpg',rate:70 },
         { Name: 'fifa', price: 10000, categori: '', off: false, nameImg: 'fifa-18-800x450.jpg',rate: 30}
-    ]
-    let Category = [{id:1,name :'کنسول',img:'fifa-18-800x450.jpg'},{id:2,name :'لوازم جانبی',img:'pexels-photo-169573.jpeg'},{id:3,name :'اسکین و کاور',img:'pexels-photo-169573.jpeg'},{id:4,name :'اکانت و دیسک بازی',img:'pexels-photo-169573.jpeg'}];
-
+    ]    
+    let Category = [
+        {id:1,name :'کنسول',img:'fifa-18-800x450.jpg'},
+        {id:2,name :'لوازم جانبی',img:'pexels-photo-169573.jpeg'},
+        {id:3,name :'اسکین و کاور',img:'pexels-photo-169573.jpeg'},
+        {id:4,name :'اکانت و دیسک بازی',img:'pexels-photo-169573.jpeg'}
+    ];     
+    let data2 = []
+    for(let i = 0; i < 8 ; i++){
+        data2.push(data[i])
+    }  
+    // console.log(data2)
+    
     const RenderCategory = (props) => {
         return (
             <div>
@@ -29,10 +41,9 @@ const Home = () => {
             </div>
         )
     }
-
+  
     return (
-        <div>
-            <Header />
+        <div>                    
             <Carousel_Page />
             <div style={{ marginTop: '15%' }}>
                 <h1>پیشنهادی ما</h1>
@@ -45,13 +56,22 @@ const Home = () => {
                 </div>
             </div>
             <div className='Items'>
-                {data.map((d) => {
+                {More ? data.map((d) => {
                     return (
-                        <Cards Name={d.Name} price={d.price} off={d.off} offer={d.offer} img={d.nameImg} rate={d.rate}/>
+                        <Cards Name={d.Name} price={d.price} off={d.off} offer={d.offer} img={d.nameImg} new={d.new} rate={d.rate}/>
                     )
-                })}
+                }) : data2.map((d)=>{
+                    return (
+                        <Cards Name={d.Name} price={d.price} off={d.off} offer={d.offer} img={d.nameImg} new={d.new} rate={d.rate}/>
+                    )
+                })
+               }
+                
             </div>
-            <a href='#'>نمایش بیشتر</a>
+            {ShowMore ?
+            <a className='more' onClick={()=>{setMore(true);setShowMore(false)}} >نمایش بیشتر</a>:
+            <a className='more' onClick={()=>{setMore(false);setShowMore(true)}} >بازگشت</a>}            
+            
             <div style={{ backgroundColor: 'aqua', width: '100%', paddingTop: '20%', marginTop: '5%' }}>1</div>
             <div className='Description'>
                 <div>
@@ -74,7 +94,7 @@ const Home = () => {
                 </div>
             </div>
             <div style={{marginBottom:'10%'}}>
-                <h2 style={{marginBottom:'5%'}}>دسته بندی ها</h2>
+                <h2 style={{marginBottom:'5%'}}>پر بازدیدترین دسته بندی ها </h2>
                 <div className='MainCate'>
                     {Category.map((m) => {
                         return (<RenderCategory title={m.name} img={m.img} />)
@@ -89,4 +109,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default memo(Home);

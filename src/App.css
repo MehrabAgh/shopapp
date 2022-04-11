@@ -48,7 +48,22 @@
     font-size: smaller;
 }
 .Card:hover{
-    opacity: .4;
+    opacity: .3;
+    cursor: pointer;
+}
+.more{
+    cursor: pointer;    
+    color: gray;
+}
+.more:hover{
+    color: red;
+}
+.hoveredCard{
+    position: absolute;    
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    
 }
 .headFooter{    
     display: flex; 
