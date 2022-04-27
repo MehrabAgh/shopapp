@@ -28,19 +28,14 @@ const Carousel_Page = () => {
         data={data}
         time={4000}
         width="2100px"
-        height="490px"
+        height="400px"
         automatic={true}
         slideBackgroundColor="darkgrey"        
         style={{
           textAlign: "center",
           maxWidth: "2100px",
-          maxHeight: "490px",
-        }} />
-        <div className='GroupMain'>
-          <div className='grid-item' style={{backgroundColor:'tomato'}}>2</div>
-          <div className='grid-item' style={{backgroundColor:'blueviolet'}}>1</div>
-          <div className='grid-item' style={{backgroundColor:'pink'}}>3</div>
-        </div>
+          maxHeight: "400px",
+        }} />        
     </div>
   );
 }

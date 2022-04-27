@@ -1,6 +1,142 @@
 .App {
     text-align: center;
+    
 }
+.itemHeaderLink{
+    text-decoration: none;
+    color: aliceblue;    
+}
+.itemHeadShow :hover{
+    background-color: #483b60;
+}
+.itemHeadShow b{
+    margin-right: 2px;
+}
+body{
+    background-color: #363c48;
+    color: aliceblue;
+}
+/* 
+    صیاد شیرازی 
+    صیاد 19 
+    پلاک 3
+ */
+
+ .ParentCard{
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+    transition: box-shadow .5s;
+ }
+ .ParentCard:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+ .dropdown {
+    position: relative;
+    display: inline-block;
+    
+  }
+  .searchOp{
+      width: 0px;
+      transition: width 1s;
+  }
+  .searchOp:hover{
+      width: 200px;
+  }
+  .dropdown-content {
+    display: none;
+    border-radius: 10px;
+    position: absolute;
+    background-color: #283250;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 22px 16px;
+    z-index: 1;
+    margin-top: 10px;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  } 
+  .gallery {
+    display: grid;
+    align-items: stretch;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(5, 5vw);
+    grid-gap: 1px 0px;    
+} 
+  .gallery__img {
+    width: 100%;
+    height: 100%;    
+    border-radius: 2px;
+}
+  
+.gallery__item--1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 10;
+}
+.gallery__item--1-5 {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 10;
+}
+.gallery__item--2-5 {
+    grid-column-start: 6;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+.gallery__item--3-5 {
+    grid-column-start: 9;
+    grid-column-end: 12;
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+.gallery__item--4-5 {
+    grid-column-start: 6;
+    grid-column-end: 9;
+    grid-row-start: 5;
+    grid-row-end:8;
+}
+.gallery__item--5-5 {
+    grid-column-start: 9;
+    grid-column-end: 12;
+    grid-row-start: 5;
+    grid-row-end:8;
+}
+.gallery__item--2 {
+    grid-column-start: 4;
+    grid-column-end: 12;
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+.gallery__item--3 {
+    grid-column-start: 4;
+    grid-column-end: 8;
+    grid-row-start: 5;
+    grid-row-end: 10;
+}
+.gallery__item--4 {
+    grid-column-start: 8;
+    grid-column-end: 12;
+    grid-row-start: 5;
+    grid-row-end: 10;
+}
+.gallery__item--5 {
+    grid-column-start: 4;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+.gallery__item--6 {
+    grid-column-start: 8;
+    grid-column-end: 12;
+    grid-row-start:1;
+    grid-row-end: 5;
+}
+/* 
+ */
 .Description{
     flex-wrap: wrap;
     display: flex;    
@@ -44,9 +180,6 @@
     overflow: hidden;
     margin-bottom: 60px;
 }
-.HeaderUp span{
-    font-size: smaller;
-}
 .Card:hover{
     opacity: .3;
     cursor: pointer;
@@ -63,15 +196,12 @@
     top: 50%;
     width: 100%;
     text-align: center;
-    
 }
 .headFooter{    
     display: flex; 
-    justify-content: space-evenly;
+    justify-content: space-around;    
 }
 .part{
-    display: flex;
-    flex-wrap: wrap;
     width: 250px ;
     text-align: right;    
     justify-content: end;
@@ -105,6 +235,17 @@
     width: 200px;        
 }
 
+.ParagaphAbout div{
+        
+    font-size: 18px;           
+}
+
+.FooterMain{
+    position: Sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
 .CategoryStl img:hover{
     cursor: pointer;
 }
@@ -119,20 +260,34 @@
     margin: 25px;
     font-weight: bold;
 }
-.HeaderUp{
-    /* display: flex; */
-    text-align:right;    
+.HeaderUp{  
+    display: flex;    
     margin-top: 5px;
+    width: 300px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
 }
 .timer{
     margin: .5%;
     margin-right: 100px;    
 }
-.stateUser{
-    margin: 2%;
+.HeaderOp{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: space-around;     
+    margin: auto;    
+    z-index: 100;
+    background-color: #282c34;
 }
 .HeaderMain hr{
     opacity: .2;
+}
+.stateUser{
+    display: flex;    
 }
 
 /*  */

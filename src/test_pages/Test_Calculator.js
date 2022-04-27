@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const TestLogin = () => {        
     const keys = [9,8,7,6,,5,4,3,2,1,0];    
@@ -13,6 +13,22 @@ const TestLogin = () => {
             <span>{number}</span>
         </div>)
     }
+
+    const [Time, setTime] = useState('');
+
+    useEffect(() => {
+        setInterval(() => {
+            setTime(startTime())
+        }, 1);
+    }); 
+    
+function startTime() {
+    const today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    let s = today.getSeconds();
+    return h + ":" + m + ":" + s;
+}
 
     return (
         <div>
