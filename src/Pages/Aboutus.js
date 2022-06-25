@@ -1,6 +1,6 @@
 
 import styled from '@emotion/styled';
-import { Button, FormControl, TextField } from '@mui/material';
+import { Button, FormControl, InputAdornment, TextField } from '@mui/material';
 import React from 'react';
 import Footer from './Footer';
 const Aboutus = () => {
@@ -46,15 +46,28 @@ const Aboutus = () => {
 
                 <video src='../Media/'></video>
             </div>
-            <div>
-                <FormControl variant="standard">
-                    <CssTextField label="نام و نام خانوادگی" id="custom-css-outlined-input" />
-                    <CssTextField label="ایمیل" id="custom-css-outlined-input" />
+            <div >
+                <h1>تماس با ما</h1>
+                <h5>پیام ، نظر و انتقادات خود را با ما درمیان بگذارید</h5>
+                <FormControl className='backMessage' variant="standard">
                     <TextField
-                        id="outlined-multiline-flexible"
-                        label="پیام ، نظر و انتقاد خود "
+                        label="نام و نام خانوادگی"
+                        id="standard-start-adornment"
+                        sx={{ m: 1, width: '25ch' }}
+                        variant="standard"
+                    />
+                      <TextField
+                        label="پست الکترونیکی"
+                        id="standard-start-adornment"
+                        sx={{ m: 1, width: '25ch' }}
+                        variant="standard"
+                    />
+                    <TextField
+                        id="outlined-multiline-static"
+                        label="پیام"
                         multiline
-                        maxRows={4}
+                        rows={4}
+                        defaultValue="Default Value"
                     />
                     <Button variant="contained">ارسال</Button>
                 </FormControl>
