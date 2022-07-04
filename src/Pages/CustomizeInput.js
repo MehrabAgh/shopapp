@@ -14,8 +14,9 @@ const cacheRtl = createCache({
   const theme = createTheme({
     direction: 'rtl', // Both here and <body dir="rtl">
   });
-  
+ 
   export default function EdInputRtl(props) {   
+   
     const valueRef = useRef('') 
     const xx = () =>{
         props.value = "xx";
@@ -24,7 +25,8 @@ const cacheRtl = createCache({
       <CacheProvider value={cacheRtl}>
         <ThemeProvider theme={theme}>
           <div dir="rtl">
-            <TextField label={props.labal} inputRef={valueRef} variant="standard" onChange={()=>{console.log(valueRef.current.value)}   } />         
+            <TextField   inputProps={{ style: { fontFamily: 'Arial', color: props.color , borderColor:'red'}}}  label={props.labal} inputRef={valueRef} variant="standard" onChange={()=>{console.log(valueRef.current.value)}}
+             style = {{width : props.width , color:props.color ,alignSelf: 'flex-start',borderColor:'red'}} />         
             {xx}
           </div>
         </ThemeProvider>

@@ -1,5 +1,6 @@
 import { FormControl } from '@mui/material';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import EdInputRtl from './CustomizeInput';
 
 const SignUp = () => {
@@ -28,7 +29,7 @@ const SignUp = () => {
             </FormControl>
             <div style={{ marginTop: '10%' }}>
                 <p>
-                    در صورتی که ثبت نام کرده اید از <a href='#'>اینجا</a> وارد شوید
+                    در صورتی که ثبت نام کرده اید از <Link style={{color :'blue'}} to={'/Login'}>اینجا </Link>وارد شوید
                 </p>
             </div>
             <br />

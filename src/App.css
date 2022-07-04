@@ -226,7 +226,14 @@ body{
     grid-row-end: 5;
 }
 .backMessage{   
-    width:50%;
+    width:40%;
+    direction: rtl;        
+  
+    background-color: #545454;    
+}
+.backMessage b {
+    color: gray;
+    align-self: flex-start;
 }
 /* 
  */
@@ -369,6 +376,7 @@ body{
     padding-top: 10px;
     padding-bottom: 10px;
     display: flex;
+    align-items: center;
     position: sticky;
     top: 0;
     justify-content: space-around;     
