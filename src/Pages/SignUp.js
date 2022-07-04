@@ -10,7 +10,7 @@ const SignUp = () => {
             <div>
                 <br />
                 <h1 style={{ marginTop: '20px' }}>ثبت نام</h1>
-                <p>Logo</p>
+                <img style={{ width: '12%', verticalAlign: 'middle' }} src={require("../Media/" + 'logo.png')} alt={'ds'} />           
             </div>
             <FormControl >
                 <EdInputRtl labal={"نام کاربری"} value = {setstate}/>
