@@ -1,8 +1,8 @@
-import { Category } from '@mui/icons-material';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Aboutus from './Pages/Aboutus';
+import Category from './Pages/Category';
 import Header from './Pages/Header';
 import Home from './Pages/Home';
 import Login from './Pages/Login';

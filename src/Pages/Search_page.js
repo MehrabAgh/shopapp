@@ -1,6 +1,8 @@
 
 import { FormControlLabel, FormLabel, IconButton, Radio, RadioGroup, Slider, Switch, TextField } from '@mui/material';
 import React from 'react';
+import {useLocation} from 'react-router-dom';
+
 import { IoSearch } from 'react-icons/io5';
 import Cards from './Cards';
 import EdInputRtl from './CustomizeInput';
@@ -8,15 +10,13 @@ import Footer from './Footer';
 
 
 let data = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }, { id: 8 }, { id: 9 }, { id: 10 }, { id: 11 }, { id: 12 }, { id: 13 }, { id: 14 }, { id: 15 }, { id: 16 }, { id: 17 }, { id: 18 }]
-function valuetext(value) {
-    return `${value}°C`;
-}
-const SearchPage = () => {
-    const [value, setValue] = React.useState([20, 37]);
 
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
+const SearchPage = () => {
+    
+    const location = useLocation()
+    const Name = location.state
+    {console.log(Name)}
+
     return (
         <div style={{marginTop:50}}>
             <TextField
@@ -24,7 +24,7 @@ const SearchPage = () => {
                 id="search-bar"
                 sx={{
                     "& .MuiOutlinedInput-root": {
-                      "& > fieldset": { borderColor: "white" },
+                      "& > fieldset": { borderColor: "white" , borderRadius:10},
                     },
                   }}
                 className="text"
@@ -32,7 +32,7 @@ const SearchPage = () => {
                  //   setSearchQuery(e.target.value);
                 }}               
                 variant="outlined"
-                placeholder="Search..."
+                placeholder="جستجو ..."
                 size="small"
             />
             <IconButton type="submit" aria-label="search">
