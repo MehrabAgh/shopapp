@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Footer from './Footer';
 
 const Category = () => {
-    const data = [2, 3, 4, 5, 65, 67, 8, 89, 3, 4, 41, 152, 15, 15, 4, 8]    
+    const data = [2, 3, 4, 5, 65, 67, 8, 89, 3, 4, 41, 152, 15, 15, 4, 8]
 
     const ShowCategory = () => {
         return (
@@ -12,8 +12,11 @@ const Category = () => {
                 {data.map(er => {
                     return (
                         <>
-                            <div style={{ backgroundImage: `url(${img})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' , borderRadius:15 }}>
-                               <Link to={'/Searchbar'} state ={er}> <div style={{ padding: 50 }} >sasas</div></Link></div>
+                            <Link to={'/Searchbar'} state={er} style={{ backgroundImage: `url(${img})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', borderRadius: 15 }}>
+                                <div >
+                                    <h2 style={{ padding: 20 }} >sasas</h2>
+                                </div>
+                            </Link>
                         </>
                     )
                 })}
@@ -22,7 +25,7 @@ const Category = () => {
     }
     return (
         <div>
-            <ShowCategory/>
+            <ShowCategory />
             <Footer />
         </div>
     );

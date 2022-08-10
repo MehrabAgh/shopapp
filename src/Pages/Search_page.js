@@ -46,7 +46,7 @@ const SearchPage = () => {
                     })}
                 </div>
 
-                <div style={{ borderStyle: 'groove', width: '20%', position: 'sticky', height: '600px', top: 0, marginTop: '2%', borderRadius: 14 , backgroundColor:'#505d63',boxShadow:'-1px 7px 20px 5px rgba(0,0,0,0.58)'}}>
+                <div style={{ borderStyle: 'groove', width: '20%', position: 'sticky', height: '600px', top: 0, marginTop: '2%', borderRadius: 14 , backgroundColor:'#363c48',boxShadow:'-1px 7px 20px 5px rgba(0,0,0,0.58)'}}>
                     <h2>فیلتر ها</h2>
                     <div style={{ margin: 'auto' }}>
                         <FormLabel style={{ color: 'white' }} id="demo-radio-buttons-group-label">مرتب سازی</FormLabel>
