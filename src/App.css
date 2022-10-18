@@ -16,7 +16,18 @@
     padding: 10px;
     background: gold;
 }
-
+.bodyOffer{
+    background-color: #181526;
+    border-radius: 20px;
+    width: 98%;    
+    display: flex;
+    margin-top: 10px;
+    position: absolute;
+    top: 30%;
+    right: 1%;    
+    flex-wrap: wrap;
+    justify-content: center;
+}
 #grid>div:nth-child(1) {
     grid-column: span 4;
 }

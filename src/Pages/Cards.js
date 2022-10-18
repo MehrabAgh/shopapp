@@ -13,7 +13,7 @@ const Cards = (props) => {
       borderRadius: '5px', backgroundColor: '#454766',
       borderWidth: 'medium', borderStyle: 'solid', borderColor: '#454766', width: '15%', overflow: 'hidden', margin: '10px', position: 'relative'
     }}>
-      <Link to={'/Product'}  style={{textDecoration:'none' , color:'white'}}>
+      <Link to={'/Product'} style={{ textDecoration: 'none', color: 'white' }}>
         <div className='Card'>
           {props.new &&
             <div style={{ position: 'absolute', backgroundColor: 'green', color: 'white', width: '25%', margin: '5px', borderRadius: '3px' }}>حراج</div>
@@ -35,12 +35,12 @@ const Cards = (props) => {
                 </>
                 : <b style={{ color: 'white' }}>{props.price}</b>}
               <i> تومان  </i></span>
-            <br />       
+            <br />
           </div>
         </div>
-        </Link>
-        </div>
-        )
+      </Link>
+    </div>
+  )
 }
 
-        export default Cards;
+export default Cards;
