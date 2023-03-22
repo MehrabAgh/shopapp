@@ -1,0 +1,49 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdownContent {
+    width: 200px;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.067);
+    position: absolute;
+    left: -40px;
+    background-color: #283250;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 22px 16px;
+    z-index: 1;
+    margin-top: 10px;
+    transition: 0.5s opacity, 0.5s height, 0.1s top;
+    @media screen and (max-width: 350px) {
+        width: 100%;
+        position: fixed;
+        top: 160px !important;
+        left: 0;
+        right: 0;
+    }
+    > .into {
+        display: flex;
+        flex-direction: column;
+        > .title {
+            color: blueviolet;
+            margin: 0;
+        }
+    }
+}
+
+.accountBtn {
+    margin-top: 0;
+    padding: 5px;
+    box-shadow: 0 0 5px rgb(51, 51, 51);
+    border-radius: 10px;
+    transition: box-shadow 0.2s;
+    &:hover {
+        box-shadow: 0 0 8px rgb(73, 73, 73);
+    }
+}

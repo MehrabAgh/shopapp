@@ -1,0 +1,22 @@
+.rootContainer {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    gap: 0px !important;
+    align-items: center;
+    align-content: center; /* NEW */
+    
+    margin: 1px  !important;
+    transition: 0.2s background-color;
+    border-radius: 10px;
+    flex: 1;
+    > .link {
+        // height: 30%;
+        width: 100%;
+        padding: 10px;
+
+    }
+    &:hover {
+        background-color: rgba(245, 245, 245, 0.111);
+    }
+}

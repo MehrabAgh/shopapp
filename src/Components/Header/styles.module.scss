@@ -1,0 +1,149 @@
+.headerMain {
+}
+
+.headerMain hr {
+    opacity: 0.2;
+}
+
+.headerOp {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    background-color: #282c34;
+    user-select: none;
+    > .logo {
+        display: flex;
+        margin-top: 5px;
+        padding: 0 2vw;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        text-align: center;
+        > img {
+            width: 60px;
+            filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.511));
+        }
+    }
+
+    > .links {
+        display: block;
+        gap: 20px;
+        transition: 0.2s height;
+        flex-direction: row-reverse;
+        @media screen and (max-width: 1044px) {
+            width: 100%;
+            height: 0;
+            margin-top: 5px;
+            overflow: hidden;
+            order: 1;
+        }
+        > .into {
+            display: flex;
+            // height: fit;
+            flex-wrap: wrap;
+            text-align: center;
+            align-items: center;
+            padding: 5px;
+            justify-content: flex-end;
+            margin-right: 10px;
+        }
+    }
+    > .linksBtn {
+        @extend .buttonedEffect;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        transition: 0.2s all;
+        transform: rotate(0);
+        margin-left: 10px;
+        > .into {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s all;
+        }
+        @media screen and (min-width: 1044px) {
+            display: none !important;
+        }
+    }
+
+    > .right {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-left: auto;
+        transition: 0.2s height;
+        padding-right: 10px;
+        @media screen and (max-width: 1044px) {
+            padding: 5px;
+            margin-left: 0 !important;
+        }
+        @media screen and (max-width: 437px) {
+            display: none;
+            height: -10px;
+        }
+
+        > .searchBtn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @extend .buttonedEffect;
+            margin-left: 10px;
+            @media screen and (max-width: 437px) {
+                margin-top: 5px;
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+
+        > .stateUser {
+            display: flex;
+            user-select: none;
+            transition: all 0.2s;
+            @extend .buttonedEffect;
+            margin-left: 10px;
+            @media screen and (max-width: 437px) {
+                margin-top: 5px;
+                margin-left: 0;
+                width: 100%;
+
+            }
+        }
+    }
+}
+
+.itemHeaderLink {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.itemHeadShow :hover {
+    background-color: #483b60;
+}
+
+.itemHeadShow b {
+    margin-right: 2px;
+}
+
+.buttonedEffect {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.045);
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.09);
+    }
+}
