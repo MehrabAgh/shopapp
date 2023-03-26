@@ -1,0 +1,16 @@
+.rootContainer{
+    .headFooter {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 10px;
+    }
+    
+    .part {
+        flex-basis: 250px;
+        
+        text-align: right;
+        justify-content: end;
+    }
+    
+}

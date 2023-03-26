@@ -1,0 +1,107 @@
+.rootContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    > .into {
+        width: 100%;
+        max-width: 700px;
+        > .top {
+            @extend .section;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            padding: 22px;
+            > .buttons {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                transition: 0.2 background-color;
+                > .btn {
+                    @extend .btn;
+                }
+            }
+            > .profileImage {
+                width: 100px;
+                border-radius: 100%;
+                opacity: 0.9;
+                border: 2px solid rgb(105, 105, 169);
+            }
+            > .name {
+                font-size: 20px;
+                margin-top: 10px;
+                letter-spacing: 1px;
+            }
+            > .phoneNumber {
+                font-size: 12px;
+            }
+        }
+
+        > .myOrder {
+            display: flex;
+            @extend .section;
+            // background-color: aqua !important;
+            min-height: 150px;
+            border-radius: 10px;
+            margin-top: 10px;
+            > .into {
+                width: 100%;
+                min-height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+                padding: 10px;
+                // background-color: red;
+                overflow-x: auto;
+                > .title{
+                    width: 100%;
+                }
+                > .item {
+                    display: flex;
+                    width: 210px;
+                    padding: 10px;
+                    border-radius: 10px;
+                    box-shadow: 0 0 5px gray;
+                    font-size: 16px;
+                    align-items: center;
+                    gap: 8px;
+                    transition: 0.2s background-color;
+                    &:hover{
+                        background-color: rgba(213, 213, 213, 0.108);
+                    }
+                    > .img {
+                        width: 60px;
+                    }
+                    > .title {
+                        text-align: center;
+                        flex: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section {
+    box-shadow: 0 0 5px rgb(26, 26, 26);
+    background-color: rgba(10, 0, 208, 0.044);
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0);
+    transition: 0.2s background-color;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.226);
+    }
+}

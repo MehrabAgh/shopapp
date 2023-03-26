@@ -1,0 +1,54 @@
+.rootContainer {
+    display: flex;
+    justify-content: center;
+    > .into {
+        width: 100%;
+        max-width: 800px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(1, 1, 1, 0.464);
+        overflow: hidden;
+        margin: 30px 10px;
+        padding: 10px 10px 15px 10px;
+        direction: rtl;
+        background-color: rgba(10, 0, 208, 0.044);
+        > .top {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(71, 224, 255, 0.205);
+            margin-bottom: 10px;
+
+            > .profileImage {
+                width: 70px;
+                border-radius: 100%;
+            }
+            > .left {
+                margin-right: 10px;
+                display: flex;
+                flex-direction: column;
+                font-size: 0.8em;
+            }
+        }
+        > .bottom {
+            > .form {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                >.textField{
+                    width: 40%;
+                    @media screen and (max-width: 618px) {
+                        width: 100%;
+                    }
+                }
+                >.submitBtn{
+                    width: 80%;
+                    @media screen and (max-width: 618px) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

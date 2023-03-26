@@ -1,0 +1,103 @@
+.parentCard {
+    width: 220px;
+    height: 350px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+    transition: box-shadow 0.5s, transform 0.5s;
+    border-radius: 5px;
+    background-color: #454766;
+    border-width: medium;
+    border-style: solid;
+    border-color: #454766;
+    overflow: hidden;
+    margin: 10px;
+    position: relative;
+    @media screen and (max-width: 1535px) {
+        width: 200px;
+    }
+    .card {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .name {
+            margin-top: 10px;
+            font-size: 25px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+        }
+        .image {
+            width: 100%;
+            height: 160px;
+
+            overflow: hidden;
+            img {
+                height: inherit;
+                // height: 100px;
+            }
+        }
+
+        .price {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .others {
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+            align-items: center;
+            justify-self: flex-end;
+            .item {
+                display: flex;
+                align-items: center;
+                font-size: 12px;
+                .ic {
+                    margin-left: 4px;
+                }
+            }
+        }
+
+        .haveOff {
+            width: 100%;
+            position: absolute;
+            background: rgb(2, 0, 36);
+            background: linear-gradient(
+                90deg,
+                rgba(2, 0, 36, 1) 0%,
+                rgba(2, 145, 255, 1) 43%,
+                rgba(2, 0, 36, 1) 100%
+            );
+            color: white;
+            border-radius: 3px;
+            animation: offerAnim 2s infinite;
+        }
+    }
+}
+
+@keyframes offerAnim {
+    0% {
+        opacity: 1;
+        box-shadow: 0 0 50px 14px rgb(200, 225, 255);
+    }
+    50% {
+        opacity: 0.5;
+        box-shadow: 0 0 5px 4px rgb(200, 225, 255);
+    }
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 50px 14px rgb(200, 225, 255);
+    }
+}
+
+.parentCard:hover {
+    box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.734),
+        0 6px 20px 20px rgba(0, 0, 0, 0.19);
+    transform: translateY(-10px);
+    /* -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+box-shadow: 5px 5px 15px 5px #000000; */
+}
+
+.ratingContainer {
+    margin: 0px 0;
+}

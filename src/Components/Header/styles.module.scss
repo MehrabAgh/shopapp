@@ -26,6 +26,9 @@
         flex-wrap: wrap;
         justify-content: space-around;
         text-align: center;
+        @media screen and (max-width: 437px) {
+            margin: 0 0 0 10px
+        }
         > img {
             width: 60px;
             filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.511));
@@ -73,6 +76,10 @@
         }
         @media screen and (min-width: 1044px) {
             display: none !important;
+        }
+        @media screen and (max-width: 437px) {
+            margin-left: auto;
+            margin-right: 10px;
         }
     }
 

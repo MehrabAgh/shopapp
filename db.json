@@ -1,0 +1,308 @@
+{
+    "main-slides": [
+        {
+            "id": 1,
+            "caption": "slide 1",
+            "image": "https://picsum.photos/700/300.jpg"
+        },
+        {
+            "id": 2,
+            "caption": "slide 2",
+            "image": "https://picsum.photos/700/302.jpg"
+        },
+        {
+            "id": 3,
+            "caption": "slide 3",
+            "image": "https://picsum.photos/700/301.jpg"
+        },
+        {
+            "id": 4,
+            "caption": "slide 4",
+            "image": "https://picsum.photos/700/303.jpg"
+        }
+    ],
+    "top-gallery": {
+        "top": {
+            "link": "https://www.zoomit.ir/exhibition/401744-galaxy-s23-unpacked-event-live/",
+            "cost": 20000,
+            "img": "https://api2.zoomit.ir/media/galaxy-unpacked2-63d8dc02733fadf748877d95?w=1920&q=75"
+        },
+        "right": {
+            "link": "https://www.zoomit.ir/mobile/383725-galaxy-s23-everthing-we-know-so-far/",
+            "cost": 14000,
+            "img": "https://api2.zoomit.ir/media/2022-11-one-ui-5-app-menu-638bb8ee8b369136d458de14?w=1920&q=75"
+        },
+        "left": {
+            "link": "https://www.zoomit.ir/mobile/401780-xiaomi-phone-miui-14-second-batch/",
+            "cost": 12000,
+            "img": "https://api2.zoomit.ir/media/2022-5-xiaomi-11t-on-his-hands-638c6931fb12065097ec7f07?w=1920&q=75"
+        }
+    },
+    "suggestions": [
+        {
+            "name": "Elden Ring",
+            "price": 4000000,
+            "img": "https://picsum.photos/700/303.jpg",
+            "rate": 10,
+            "visitCount": 14,
+            "commentCount": 5,
+            "new": true
+        },
+        {
+            "name": "Star Wars",
+            "price": 2000000,
+            "img": "https://picsum.photos/700/302.jpg",
+            "rate": 40,
+            "visitCount": 14,
+            "commentCount": 5,
+            "new": true
+        },
+        {
+            "name": "The last of us part I",
+            "price": 1500000,
+            "img": "https://picsum.photos/700/301.jpg",
+            "rate": 10,
+            "visitCount": 14,
+            "commentCount": 5,
+            "new": true
+        },
+        {
+            "name": "God Of War 4",
+            "price": 1500000,
+            "img": "https://picsum.photos/700/304.jpg",
+            "rate": 90,
+            "visitCount": 12,
+            "commentCount": 10,
+            "new": true
+        },
+        {
+            "name": "Whicher III",
+            "price": 1000000,
+            "img": "https://picsum.photos/700/305.jpg",
+            "rate": 40,
+            "visitCount": 14,
+            "commentCount": 14,
+            "new": true
+        },
+        {
+            "name": "Spider Man (marvel)",
+            "price": 1800000,
+            "img": "https://picsum.photos/700/306.jpg",
+            "rate": 80,
+            "visitCount": 14,
+            "commentCount": 5,
+            "new": true
+        },
+        {
+            "name": "infamous Second Son",
+            "price": 800000,
+            "img": "https://picsum.photos/700/307.jpg",
+            "rate": 70,
+            "visitCount": 14,
+            "commentCount": 12,
+            "new": true
+        },
+        {
+            "name": "The Last Of Us Part II",
+            "price": 4000000,
+            "img": "https://picsum.photos/700/308.jpg",
+            "rate": 20,
+            "visitCount": 14,
+            "commentCount": 5,
+            "new": true
+        },
+        {
+            "name": "Batman Arkhamnight",
+            "price": 1000000,
+            "img": "https://picsum.photos/700/309.jpg",
+            "rate": 30,
+            "visitCount": 14,
+            "commentCount": 12,
+            "new": true
+        }
+    ],
+    "bottom-gallery": {
+        "topLeft": {
+            "link": "https://www.zoomit.ir/exhibition/401744-galaxy-s23-unpacked-event-live/",
+            "cost": 20000,
+            "img": "https://api2.zoomit.ir/media/galaxy-unpacked2-63d8dc02733fadf748877d95?w=1920&q=75"
+        },
+        "topRight": {
+            "link": "https://www.zoomit.ir/exhibition/401869-unpacked2023-event-wrapup/",
+            "cost": 50000,
+            "img": "https://api2.zoomit.ir/media/galaxy-unpacked-2023-samsung-63db7716733fadf748879de1?w=1920&q=75"
+        },
+        "bottomLeft": {
+            "link": "https://www.zoomit.ir/video-review/401814-pixel-7-pro-video-review/",
+            "cost": 80000,
+            "img": "https://api2.zoomit.ir/media/pixel-7-pro-during-phone-call-63d55a5f733fadf748877110?w=1920&q=75"
+        },
+        "bottomRight": {
+            "link": "https://api2.zoomit.ir/media/2022-11-one-ui-5-app-menu-638bb8ee8b369136d458de14?w=1920&q=75",
+            "cost": 140000,
+            "img": "https://api2.zoomit.ir/media/2022-11-one-ui-5-app-menu-638bb8ee8b369136d458de14?w=1920&q=75"
+        }
+    },
+    "categories": [
+        {
+            "title": "title1",
+            "img": "https://api2.zoomit.ir/media/2022-11-one-ui-5-app-menu-638bb8ee8b369136d458de14?w=1920&q=75",
+            "link": "https://www.zoomit.ir/exhibition/401744-galaxy-s23-unpacked-event-live/"
+        },
+        {
+            "title": "title2",
+            "img": "https://picsum.photos/700/302.jpg",
+            "link": "https://www.zoomit.ir/exhibition/401869-unpacked2023-event-wrapup/"
+        },
+        {
+            "title": "title3",
+            "img": "https://picsum.photos/700/302.jpg",
+            "link": "https://www.zoomit.ir/exhibition/401869-unpacked2023-event-wrapup/"
+        },
+        {
+            "title": "title4",
+            "img": "https://picsum.photos/700/302.jpg",
+            "link": "https://www.zoomit.ir/exhibition/401869-unpacked2023-event-wrapup/"
+        },
+        {
+            "title": "title5",
+            "img": "https://picsum.photos/700/302.jpg",
+            "link": "https://www.zoomit.ir/exhibition/401869-unpacked2023-event-wrapup/"
+        },
+        {
+            "title": "title6",
+            "img": "https://picsum.photos/700/302.jpg",
+            "link": "https://www.zoomit.ir/exhibition/401869-unpacked2023-event-wrapup/"
+        },
+        {
+            "title": "title7",
+            "img": "https://picsum.photos/700/302.jpg",
+            "link": "https://www.zoomit.ir/exhibition/401869-unpacked2023-event-wrapup/"
+        },
+        {
+            "title": "title8",
+            "img": "https://picsum.photos/700/302.jpg",
+            "link": "https://www.zoomit.ir/exhibition/401869-unpacked2023-event-wrapup/"
+        }
+    ],
+    "some-categories": [
+        {
+            "title": "title1",
+            "img": "https://api2.zoomit.ir/media/2022-11-one-ui-5-app-menu-638bb8ee8b369136d458de14?w=1920&q=75",
+            "link": "https://www.zoomit.ir/exhibition/401744-galaxy-s23-unpacked-event-live/"
+        },
+        {
+            "title": "title2",
+            "img": "https://picsum.photos/700/302.jpg",
+            "link": "https://www.zoomit.ir/exhibition/401869-unpacked2023-event-wrapup/"
+        },
+        {
+            "title": "title3",
+            "img": "https://picsum.photos/700/302.jpg",
+            "link": "https://www.zoomit.ir/exhibition/401869-unpacked2023-event-wrapup/"
+        },
+        {
+            "title": "title4",
+            "img": "https://picsum.photos/700/302.jpg",
+            "link": "https://www.zoomit.ir/exhibition/401869-unpacked2023-event-wrapup/"
+        },
+        {
+            "title": "title5",
+            "img": "https://picsum.photos/700/302.jpg",
+            "link": "https://www.zoomit.ir/exhibition/401869-unpacked2023-event-wrapup/"
+        },
+        {
+            "title": "title6",
+            "img": "https://picsum.photos/700/302.jpg",
+            "link": "https://www.zoomit.ir/exhibition/401869-unpacked2023-event-wrapup/"
+        },
+        {
+            "title": "title7",
+            "img": "https://picsum.photos/700/302.jpg",
+            "link": "https://www.zoomit.ir/exhibition/401869-unpacked2023-event-wrapup/"
+        }
+    ],
+    "searchedItem": [
+        {
+            "name": "Elden Ring",
+            "price": 4000000,
+            "img": "https://picsum.photos/700/303.jpg",
+            "rate": 10,
+            "visitCount": 14,
+            "commentCount": 5,
+            "new": true
+        },
+        {
+            "name": "Star Wars",
+            "price": 2000000,
+            "img": "https://picsum.photos/700/302.jpg",
+            "rate": 40,
+            "visitCount": 14,
+            "commentCount": 5,
+            "new": true
+        },
+        {
+            "name": "The last of us part I",
+            "price": 1500000,
+            "img": "https://picsum.photos/700/301.jpg",
+            "rate": 10,
+            "visitCount": 14,
+            "commentCount": 5,
+            "new": true
+        },
+        {
+            "name": "God Of War 4",
+            "price": 1500000,
+            "img": "https://picsum.photos/700/304.jpg",
+            "rate": 90,
+            "visitCount": 12,
+            "commentCount": 10,
+            "new": true
+        },
+        {
+            "name": "Whicher III",
+            "price": 1000000,
+            "img": "https://picsum.photos/700/305.jpg",
+            "rate": 40,
+            "visitCount": 14,
+            "commentCount": 14,
+            "new": true
+        },
+        {
+            "name": "Spider Man (marvel)",
+            "price": 1800000,
+            "img": "https://picsum.photos/700/306.jpg",
+            "rate": 80,
+            "visitCount": 14,
+            "commentCount": 5,
+            "new": true
+        },
+        {
+            "name": "infamous Second Son",
+            "price": 800000,
+            "img": "https://picsum.photos/700/307.jpg",
+            "rate": 70,
+            "visitCount": 14,
+            "commentCount": 12,
+            "new": true
+        },
+        {
+            "name": "The Last Of Us Part II",
+            "price": 4000000,
+            "img": "https://picsum.photos/700/308.jpg",
+            "rate": 20,
+            "visitCount": 14,
+            "commentCount": 5,
+            "new": true
+        },
+        {
+            "name": "Batman Arkhamnight",
+            "price": 1000000,
+            "img": "https://picsum.photos/700/309.jpg",
+            "rate": 30,
+            "visitCount": 14,
+            "commentCount": 12,
+            "new": true
+        }
+    ]
+}

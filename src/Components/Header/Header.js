@@ -13,18 +13,16 @@ import { TiThMenu } from "react-icons/ti";
 import MenuIcon from "@mui/icons-material/Menu";
 import Close from "@mui/icons-material/Close";
 
-const List = [
-    { name: "خانه", url: "/" },
-    { name: "دسته بندی کالا", url: "/Category", list: true },
-    { name: "تخفیف ها و پیشنهاد ها", url: "/Offer" },
+const links = [
     { name: "درباره ما", url: "/about-us" },
+    { name: "تخفیف ها و پیشنهاد ها", url: "/Offer" },
+    { name: "دسته بندی کالا", url: "/Category", list: true },
+    { name: "خانه", url: "/" },
 ];
-let tstList = List.reverse();
 
-// ["", "", ""];
 /* eslint-disable jsx-a11y/anchor-is-valid */
 const Header = () => {
-    const [isOpenLink, setOpenLink] = React.useState(0);
+    const [isOpenLink, setOpenLink] = React.useState(false);
     const [linksHeight, setLinksHeight] = React.useState(50);
     const headerRef = React.useRef(null);
     const spaceRef = React.useRef(null);
@@ -35,7 +33,7 @@ const Header = () => {
         setOpenLink(prev => !prev);
     }, []);
 
-    const rightAnimation = React.useCallback(() => {
+    const rightAnimationLogic = React.useCallback(() => {
         if (isOpenLink && window.innerWidth < 437) {
             rightRef.current.style.display = "flex";
             setTimeout(() => {
@@ -65,20 +63,19 @@ const Header = () => {
     React.useEffect(() => {
         setLinksHeight(Number(intoLinksRef.current.clientHeight));
 
-        rightAnimation();
-        window.addEventListener("resize", rightAnimation);
+        rightAnimationLogic();
+        window.addEventListener("resize", rightAnimationLogic);
 
         return () => {
-            window.removeEventListener("resize", rightAnimation);
+            window.removeEventListener("resize", rightAnimationLogic);
         };
-    }, [isOpenLink, rightAnimation]);
+    }, [isOpenLink, rightAnimationLogic]);
 
     return (
         <div className={styles.headerMain}>
             <div className={styles.headerOp} ref={headerRef}>
                 <a href="/" className={styles.logo}>
                     <img
-                        // style={{ width: "40%", verticalAlign: "middle" }}
                         src={require("../../Assets/imgs/logo.png")}
                         alt={"ds"}
                     />
@@ -88,7 +85,7 @@ const Header = () => {
                     style={isOpenLink ? { height: linksHeight } : {}}
                 >
                     <div className={styles.into} ref={intoLinksRef}>
-                        {tstList.map((n, index) => {
+                        {links.map((n, index) => {
                             return (
                                 <ItemNonDrop
                                     url={n.url}
@@ -131,14 +128,14 @@ const Header = () => {
                         //! get account data form api and pass to bellow component
                         */}
                         <AccountDropper
-                            isLogin={true}
+                            isLogin={false}
                             accountData={{ name: "test name" } ?? undefined}
                         />
                     </div>
                     <Link
                         className={styles.stateUser}
                         style={{ textDecoration: "none", color: "white" }}
-                        to={"/basket"}
+                        to={"Profile/Basket"}
                     >
                         <IoBagHandleOutline
                             size={25}

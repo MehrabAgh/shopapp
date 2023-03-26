@@ -1,0 +1,84 @@
+.rootContainer {
+    width: 400px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 10px;
+    padding: 5px 10px 10px 10px;
+    box-shadow: 2px 4px 7px 2px rgba(0, 0, 0, 0.48);
+    color: #282c34;
+    background: rgba(147, 128, 255, 0.116);
+    > .top {
+        margin-bottom: 10px;
+        > .title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            color: rgb(255, 255, 255);
+            background-color: rgba(255, 255, 255, 0.138);
+            border-radius: 10px;
+            margin: 0;
+            > h1{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 5px 5px 0;
+                // padding: 3px;
+                font-size: 1.1em;
+            }
+        }
+        > .logoTitle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            opacity: 0.7;
+            > .image {
+                width: 100px;
+            }
+            > .title{
+                margin-right: 5px;
+                font-size: 20px;
+                color: white;
+                height: fit-content;
+            }
+        }
+    }
+    > .formControl {
+        padding: 10px;
+        .textField {
+            margin: 10px;
+            direction: rtl;
+        }
+        .btnSubmit {
+            background: linear-gradient(
+                to right,
+                #1ec6ce 0%,
+                #1c6ea4 0%,
+                #bc2dc5 100%
+            );
+            padding: 12px;
+            border-radius: 30px;
+            color: white;
+            font-size: 18px;
+            margin-top: 10px;
+            border-width: 0ch;
+            background-size: 100% 20%;
+
+            transition: 1s background-position;
+        }
+    }
+
+    > .bottom {
+        color: rgb(196, 146, 216);
+    }
+
+    .btnSubmit:hover {
+        cursor: pointer;
+        background-position: 200% 180%;
+    }
+}

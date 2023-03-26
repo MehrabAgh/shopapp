@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    // background-color: red;
+    > div {
+        width: 100%;
+    }
+}
+
+.sectionRow {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.055);
+    padding: 10px;
+
+    > .title {
+        flex: 1;
+        font-size: 22px;
+        text-align: right;
+    }
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.171);
+    > .title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 3;
+        padding: 14px;
+        text-align: right;
+
+        // background-color: red;
+    }
+    > .desc {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        text-align: right;
+        // background-color: blue;
+        padding: 14px;
+        flex: 9;
+    }
+}

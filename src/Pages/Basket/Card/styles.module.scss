@@ -1,0 +1,53 @@
+.card {
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 1px gray;
+    padding: 8px;
+    gap: 8px;
+    @media screen and (max-width: 644px) {
+        justify-content: center;
+    }
+    > .left {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media screen and (max-width: 644px) {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        > .img {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 100%;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.423);
+            > img {
+                width: 100%;
+            }
+        }
+
+        > .title {
+            margin-left: 10px;
+            font-size: 1.2em;
+        }
+    }
+    > .countSection {
+        display: flex;
+        align-items: center;
+        > .textField {
+            width: 100px;
+        }
+    }
+    > .costSection {
+        direction: rtl;
+    }
+}

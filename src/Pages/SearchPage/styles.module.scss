@@ -1,0 +1,41 @@
+.rootContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    position: relative;
+    > .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        > .top {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            position: sticky;
+            top: 69px;
+            z-index: 10;
+            > .into {
+                width: fit-content;
+                display: block;
+                max-width: 350px;
+                padding: 5px;
+                background-color: rgba(106, 106, 106, 0.095);
+                backdrop-filter: blur(10px);
+                border-radius: 10px;
+                > .searchTextFiled {
+                    // width: 100%;
+                }
+            }
+        }
+        .listContainer {
+            flex: 1;
+            margin: 20px 30px;
+            // background-color: red;
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+}

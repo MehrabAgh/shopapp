@@ -1,0 +1,52 @@
+.parentCard {
+    border-radius: 5px;
+    background-color: #454766;
+    border-width: medium;
+    border-style: solid;
+    border-color: #454766;
+    width: 30%;
+    overflow: hidden;
+    margin: 10px;
+    position: relative;
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.offerTitle {
+    width: fit-content;
+    align-self: center;
+    text-align: center;
+    font-size: 2vw;
+    margin: 15px 0;
+    background: rgb(0, 212, 255);
+    background: linear-gradient(
+        90deg,
+        rgb(255, 0, 98) 0%,
+        rgb(255, 68, 139) 39%,
+        rgb(255, 0, 98) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: offerTitleAnim 2s infinite ease-in-out;
+}
+
+@keyframes offerTitleAnim {
+    0% {
+    }
+    20% {
+        transform: rotate(1deg);
+        text-shadow: 0 0 5px white;
+    }
+    50% {
+        text-shadow: 0 0 1px white;
+    }
+    60% {
+        transform: rotate(-2deg);
+        text-shadow: 0 0 5px white;
+    }
+    100% {
+    }
+}

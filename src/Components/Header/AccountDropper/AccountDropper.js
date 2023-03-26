@@ -85,7 +85,7 @@ const AccountDropper = props => {
                         isOpen && props.isLogin
                             ? 220
                             : isOpen && !props.isLogin
-                            ? 240
+                            ? 200
                             : 0,
                     opacity: isOpen ? 1 : 0,
                     top: isOpen ? 30 : -150,

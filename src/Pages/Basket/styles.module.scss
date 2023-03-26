@@ -1,0 +1,36 @@
+.rootContainer {
+    display: flex;
+    justify-content: center;
+    > .into {
+        width: 100%;
+        max-width: 800px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(1, 1, 1, 0.464);
+        overflow: hidden;
+        margin: 30px 10px;
+        padding: 10px 10px 15px 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        // direction: rtl;
+        background-color: rgba(10, 0, 208, 0.044);
+
+        > .title {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            font-size: 2em;
+        }
+        > .cards {
+            width: 100%;
+            display: flex;
+            height: fit-content;
+            flex-direction: column;
+            @media screen and (max-width: 644px) {
+                max-width: 300px;
+            }
+
+        }
+    }
+}
