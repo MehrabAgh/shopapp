@@ -19,6 +19,8 @@ import styles from "./styles.module.scss";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SortIcon from "@mui/icons-material/Sort";
 import CloseIcon from "@mui/icons-material/Close";
+import { numberWithCommas } from "../../../myModules";
+import Loading from "../../../Components/Loading/Loading";
 
 function valuetext(value) {
     return `${value}°C`;
@@ -28,6 +30,7 @@ export default function RightSide() {
     const [limitedPrice, setLimitedPrice] = React.useState([100000, 100000000]);
     const [expanded, setExpanded] = React.useState("panel1");
     const [filterMenuIsVisible, setFilterMenuIsVisible] = React.useState(false);
+    const [isLoading, setIsLoading] = React.useState(false);
 
     const filterMenuRef = React.useRef(null);
     const filterMenuBtnRef = React.useRef(null);
@@ -68,6 +71,14 @@ export default function RightSide() {
         setFilterMenuIsVisible(false);
     }, []);
 
+    const handleClickSubmitChangesBtn = React.useCallback(()=>{
+        setIsLoading(true);
+
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 1500);
+    },[])
+
     React.useEffect(() => {
         if (limitedPrice[0] >= limitedPrice[1]) {
             setLimitedPrice([100000, limitedPrice[0] + 1]);
@@ -96,6 +107,7 @@ export default function RightSide() {
 
     return (
         <>
+        <Loading open={isLoading} />
             {filterMenuIsVisible ? (
                 ""
             ) : (
@@ -250,7 +262,7 @@ export default function RightSide() {
                         </AccordionDetails>
                     </Accordion>
                     <div style={{ padding: 10 }}>
-                        <Button variant="contained" style={{ width: "100%" }}>
+                        <Button variant="contained" style={{ width: "100%" }} onClick={handleClickSubmitChangesBtn}>
                             اعمال تغییرات
                         </Button>
                     </div>
@@ -258,15 +270,4 @@ export default function RightSide() {
             </div>
         </>
     );
-}
-
-/**
- *
- * @param {number} number
- * @returns
- */
-function numberWithCommas(number) {
-    var parts = number.toString().split(".");
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    return parts.join(".");
 }

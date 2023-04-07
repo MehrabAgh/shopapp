@@ -304,5 +304,73 @@
             "commentCount": 12,
             "new": true
         }
+    ],
+    "basket": [
+        {
+            "id": 1,
+            "imgSrc": "https://picsum.photos/id/1/200/300",
+            "title": "test",
+            "count": 10,
+            "cost": 20000
+        },
+        {
+            "id": 2,
+            "imgSrc": "https://picsum.photos/id/1/200/299",
+            "title": "test2",
+            "count": 10,
+            "cost": 25000
+        }
+    ],
+    "products": [
+        {
+            "id": 0,
+            "title": "test",
+            "images": [
+                "https://picsum.photos/id/1/200/299",
+                "https://picsum.photos/id/1/200/289"
+            ],
+            "mainImage": "https://picsum.photos/id/1/200/299",
+            "cost": 14000,
+            "description": "this is a string of the description.",
+            "preview": "it will be string of the html",
+            "comments": [
+                {
+                    "name": "test title",
+                    "email": "testmail@mail.com",
+                    "description": "this is a string of the description."
+                }
+            ],
+            "specification": [
+                {
+                    "title": "test title",
+                    "description": "this is a string of the description."
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "title": "test",
+            "images": [
+                "https://picsum.photos/id/1/200/299",
+                "https://picsum.photos/id/1/200/289"
+            ],
+            "mainImage": "https://picsum.photos/id/1/200/299",
+            "cost": 14000,
+            "description": "this is a string of the description.",
+            "preview": "it will be string of the html",
+            "comments": [
+                {
+                    "name": "test title",
+                    "email": "testmail@mail.com",
+                    "description": "this is a string of the description."
+                }
+            ],
+            "specification": [
+                {
+                    "title": "test title",
+                    "description": "this is a string of the description."
+                }
+            ]
+        }
     ]
 }

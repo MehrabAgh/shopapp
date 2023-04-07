@@ -12,6 +12,7 @@ import AccountDropper from "./AccountDropper/AccountDropper";
 import { TiThMenu } from "react-icons/ti";
 import MenuIcon from "@mui/icons-material/Menu";
 import Close from "@mui/icons-material/Close";
+import { BasketContext } from "../../Context/UserContext";
 
 const links = [
     { name: "درباره ما", url: "/about-us" },
@@ -28,6 +29,9 @@ const Header = () => {
     const spaceRef = React.useRef(null);
     const intoLinksRef = React.useRef(null);
     const rightRef = React.useRef(null);
+
+    const {basketList, setBasketList} = React.useContext(BasketContext);
+    console.log(basketList);
 
     const handleLinkBtnClick = React.useCallback(() => {
         setOpenLink(prev => !prev);
@@ -141,7 +145,7 @@ const Header = () => {
                             size={25}
                             style={{ marginRight: "10px" }}
                         />
-                        <b>0</b>
+                        <b>{basketList.length}</b>
                     </Link>
                 </div>
             </div>

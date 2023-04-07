@@ -1,6 +1,7 @@
 .rootContainer {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     > .into {
         width: 100%;
         max-width: 800px;
@@ -21,6 +22,18 @@
             align-items: center;
             justify-content: flex-end;
             font-size: 2em;
+        }
+        > .totalSection{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            > .item{
+                width: max-content;
+                padding: 5px;
+                border-radius: 10px;
+                background-color: rgba(165, 165, 165, 0.218);
+            }
         }
         > .cards {
             width: 100%;

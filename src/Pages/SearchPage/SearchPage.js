@@ -1,7 +1,4 @@
-import {
-    IconButton,
-    TextField,
-} from "@mui/material";
+import { IconButton, TextField } from "@mui/material";
 import React from "react";
 import { useLocation } from "react-router-dom";
 
@@ -11,6 +8,7 @@ import EdInputRtl from "../../Components/CusotmizeInput/CustomizeInput";
 import Footer from "../../Components/Footer/Footer";
 import styles from "./styles.module.scss";
 import RightSide from "./RightSide/RightSide";
+import Loading from "../../Components/Loading/Loading";
 
 /**
  * @type {{name: string,
@@ -24,7 +22,7 @@ import RightSide from "./RightSide/RightSide";
 let initializeSearchedItems = [
     {
         id: 0,
-        name: "test",
+        name: "test 1",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -34,7 +32,7 @@ let initializeSearchedItems = [
     },
     {
         id: 1,
-        name: "test",
+        name: "test ha 2",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -44,7 +42,7 @@ let initializeSearchedItems = [
     },
     {
         id: 2,
-        name: "test",
+        name: "test konim 3",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -54,7 +52,7 @@ let initializeSearchedItems = [
     },
     {
         id: 3,
-        name: "test",
+        name: "test hardam 4",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -64,7 +62,7 @@ let initializeSearchedItems = [
     },
     {
         id: 4,
-        name: "test",
+        name: "test eshgh 5",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -74,7 +72,7 @@ let initializeSearchedItems = [
     },
     {
         id: 5,
-        name: "test",
+        name: "test kala 6 ",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -84,7 +82,7 @@ let initializeSearchedItems = [
     },
     {
         id: 6,
-        name: "test",
+        name: "test disk 7",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -94,7 +92,7 @@ let initializeSearchedItems = [
     },
     {
         id: 7,
-        name: "test",
+        name: "test past 8",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -104,7 +102,7 @@ let initializeSearchedItems = [
     },
     {
         id: 8,
-        name: "test",
+        name: "test bezan 9",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -114,7 +112,7 @@ let initializeSearchedItems = [
     },
     {
         id: 9,
-        name: "test",
+        name: "test bia 10",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -124,7 +122,7 @@ let initializeSearchedItems = [
     },
     {
         id: 10,
-        name: "test",
+        name: "test eleven 11",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -134,7 +132,7 @@ let initializeSearchedItems = [
     },
     {
         id: 11,
-        name: "test",
+        name: "test davazdah 12",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -144,7 +142,7 @@ let initializeSearchedItems = [
     },
     {
         id: 12,
-        name: "test",
+        name: "test dige 13",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -154,7 +152,7 @@ let initializeSearchedItems = [
     },
     {
         id: 13,
-        name: "test",
+        name: "test chizi 14",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -164,7 +162,7 @@ let initializeSearchedItems = [
     },
     {
         id: 14,
-        name: "test",
+        name: "test be 15",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -174,7 +172,7 @@ let initializeSearchedItems = [
     },
     {
         id: 15,
-        name: "test",
+        name: "test zehnam 16",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -184,7 +182,7 @@ let initializeSearchedItems = [
     },
     {
         id: 16,
-        name: "test",
+        name: "test nemi rese 17",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -194,7 +192,7 @@ let initializeSearchedItems = [
     },
     {
         id: 17,
-        name: "test",
+        name: "test hey 18",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -204,7 +202,7 @@ let initializeSearchedItems = [
     },
     {
         id: 18,
-        name: "test",
+        name: "test khoda 19",
         price: 20000,
         img: require("../../Assets/imgs/console.jpg"),
         commentCount: 12,
@@ -218,6 +216,12 @@ const SearchPage = () => {
     const [searchedItems, setSearchedItems] = React.useState(
         initializeSearchedItems
     );
+    const [searchTerm, setSearchTerm] = React.useState("");
+    const [isLoading, setIsLoading] = React.useState(false);
+
+    const handleChangeSearchTextFiled = React.useCallback(e => {
+        setSearchTerm(e.target.value);
+    }, []);
 
     // const location = useLocation();
     // const Namett = location.state;
@@ -225,11 +229,30 @@ const SearchPage = () => {
     //     console.log(Namett);
     // }
 
-    console.log(searchedItems);
+    const handleClickSearchBtn = React.useCallback(() => {
+        if (typeof searchTerm === "string" && searchTerm.trim() !== "") {
+            setIsLoading(true);
+            const newSearchedItems = initializeSearchedItems.filter((item,index)=>{
+                return item.name.includes(searchTerm.trim());
+            })
+            console.log(newSearchedItems)
+            setSearchedItems(newSearchedItems);
+            setTimeout(() => {
+            setIsLoading(false);
+                
+            }, 1000);
+        }
+    }, [searchTerm]);
+
+
+    // React.useEffect(()=>{
+    //     if(isLoading){
+
+    //     }
+    // },[isLoading])
 
     return (
         <div className={styles.rootContainer}>
-
             <div className={styles.content}>
                 <div className={styles.top}>
                     <div className={styles.into}>
@@ -252,18 +275,18 @@ const SearchPage = () => {
                                 },
                             }}
                             className={styles.searchTextFiled}
-                            onInput={e => {
-                                //   setSearchQuery(e.target.value);
-                            }}
+                            onInput={handleChangeSearchTextFiled}
                             variant="outlined"
                             placeholder="جستجو ..."
                             size="small"
+                            value={searchTerm}
                         />
                         <IconButton
                             style={{ marginLeft: 10 }}
                             color="success"
                             aria-label="search"
                             sx={{ border: "1px solid white" }}
+                            onClick={handleClickSearchBtn}
                         >
                             <IoSearch style={{ fill: "white" }} />
                         </IconButton>
@@ -287,6 +310,7 @@ const SearchPage = () => {
                 <RightSide />
             </div>
             <Footer />
+            <Loading open={isLoading}/>
         </div>
     );
 };

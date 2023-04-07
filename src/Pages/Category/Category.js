@@ -5,6 +5,7 @@ import gameImg from "../../Assets/imgs/ps5.jpg";
 import Footer from "../../Components/Footer/Footer";
 import styles from "./styles.module.scss";
 import CategoryItem from "./CategoryItem/CategoryItem";
+import ScrollToTop from "../../Components/ScrollToTop/ScrollToTop";
 
 const colors = [
     { color: "#FAE100", used: false },
@@ -55,21 +56,24 @@ const Category = () => {
     console.log(colors);
     const ShowCategory = () => {
         return (
-            <div className={styles.grid}>
-                {data.map((item, index) => {
-                    let color = colors[index];
+            <>
+                <ScrollToTop />
+                <div className={styles.grid}>
+                    {data.map((item, index) => {
+                        let color = colors[index];
 
-                    return (
-                        <CategoryItem
-                            state={item.state}
-                            img={item.img}
-                            key={item}
-                            title={item.title}
-                            overlayColor={color.color}
-                        />
-                    );
-                })}
-            </div>
+                        return (
+                            <CategoryItem
+                                state={item.state}
+                                img={item.img}
+                                key={item}
+                                title={item.title}
+                                overlayColor={color.color}
+                            />
+                        );
+                    })}
+                </div>
+            </>
         );
     };
     return (

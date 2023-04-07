@@ -1,8 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {
+    Alert,
     AppBar,
     Box,
+    Button,
+    IconButton,
+    Snackbar,
     Tab,
     Tabs,
     ThemeProvider,
@@ -18,6 +22,13 @@ import { IoMdListBox } from "react-icons/io";
 import { VscOpenPreview } from "react-icons/vsc";
 import PreviewTab from "./PreviewTab/PreviewTab";
 import CommentsTab from "./CommentsTab/CommentsTab";
+import { numberWithCommas } from "../../myModules";
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import ScrollToTop from "../../Components/ScrollToTop/ScrollToTop";
+import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
+import { BasketContext } from "../../Context/UserContext";
+import urls from "../../apis";
+import CloseIcon from "@mui/icons-material/Close";
 
 const Product = props => {
     let data =
@@ -25,33 +36,135 @@ const Product = props => {
     const theme = useTheme();
     const [value, setValue] = React.useState(0);
     const [pinAppBar, setPinAppBar] = React.useState(false);
+    const [snackStates, setSnakeStates] = React.useState({
+        isOpen: false,
+        message: "",
+        severity: "success",
+    });
+    const [currentProduct, setCurrentProduct] = React.useState({
+        id: 0,
+        images: ["", ""],
+        mainImage: "",
+        title: "",
+        cost: 0,
+        description: "",
+        preview: "",
+        comments: [{ name: "", email: "", description: "" }],
+        specification: [{ title: "", description: "" }],
+    });
+    const [searchParams, setSearchParams] = useSearchParams();
+    const { basketList, setBasketList } = React.useContext(BasketContext);
+    const navigate = useNavigate();
 
-    const handleChange = (event, newValue) => {
+    const handleChange = React.useCallback((event, newValue) => {
         setValue(newValue);
-    };
+    }, []);
 
-    const handleChangeIndex = index => {
+    const handleChangeIndex = React.useCallback(index => {
         setValue(index);
+    }, []);
+
+    const handleAddToBasketBtn = React.useCallback(() => {
+        let isValid = true;
+        for (const item of basketList) {
+            if (item.id === currentProduct.id) {
+                isValid = false;
+                break;
+            }
+        }
+
+        if (!isValid) {
+            setSnakeStates({
+                isOpen: true,
+                severity: "warning",
+                message: "قبلا به سبد خرید شما اضافه شده است"
+            })
+            return;
+        }
+
+        let newBasketList = [
+            ...basketList,
+            {
+                id: currentProduct.id,
+                imgSrc: currentProduct.mainImage,
+                title: currentProduct.title,
+                count: 1,
+                cost: currentProduct.cost,
+            },
+        ];
+        setBasketList(newBasketList);
+        setSnakeStates({
+            isOpen: true,
+            message: "با موفقیت به سبد خرید اضافه شد.",
+            severity: "success"
+        });
+    }, [
+        basketList,
+        currentProduct.cost,
+        currentProduct.id,
+        currentProduct.mainImage,
+        currentProduct.title,
+        setBasketList,
+    ]);
+    
+    console.log(currentProduct);
+
+    const handleClose = (event, reason) => {
+        if (reason === "clickaway") {
+            return;
+        }
+
+        setSnakeStates(false);
     };
 
     React.useEffect(() => {
         window.addEventListener("scroll", e => {
             if (window.scrollY > 430.0) {
                 setPinAppBar(true);
-                console.log(window.scrollY);
             } else if (window.scrollY < 430) setPinAppBar(false);
         });
     }, []);
 
+    React.useEffect(() => {
+        const productId = searchParams.get("id");
+        console.log(`product id = ${productId}`);
+        (async function () {
+            const result = await getProductById(productId);
+            if (result.length === 0) {
+                navigate("/404NotFound");
+            } else {
+                setCurrentProduct(result[0]);
+            }
+        })();
+    }, [navigate, searchParams]);
     return (
         <div>
+            <ScrollToTop />
+            <Snackbar
+                open={snackStates.isOpen}
+                autoHideDuration={6000}
+                onClose={handleClose}
+            >
+                <Alert severity={snackStates.severity}>
+                    {snackStates.message}
+                </Alert>
+            </Snackbar>
             <div className={styles.MainCarder}>
                 <div className={styles.top}>
                     <div className={styles.littleDetails}>
                         <h1 className={styles.title}> نام کالا مورد نظر</h1>
                         <h2 className={styles.cost}>
-                            <strong>12000000</strong> تومان{" "}
+                            <strong>{numberWithCommas(12000000)}</strong> تومان{" "}
                         </h2>
+                        <div className={styles.actions}>
+                            <Button
+                                onClick={handleAddToBasketBtn}
+                                variant="contained"
+                            >
+                                اضافه به سبد خرید{" "}
+                                <ShoppingBasketIcon style={{ marginLeft: 5 }} />
+                            </Button>
+                        </div>
                         <h3>:مشخصات</h3>
                         <p>{data}</p>
                     </div>
@@ -162,6 +275,18 @@ function a11yProps(index) {
         id: `full-width-tab-${index}`,
         "aria-controls": `full-width-tabpanel-${index}`,
     };
+}
+
+/**
+ *
+ * @param {string | number} id
+ */
+async function getProductById(id) {
+    const res = await fetch(urls.baseUrl + urls.products + "/?id=" + id);
+    // console.log(urls.baseUrl + urls.products + "?id=" + id);
+    const data = res.json();
+
+    return data;
 }
 
 export default Product;

@@ -1,12 +1,15 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import AddIcon from "@mui/icons-material/Add";
-import { IconButton, TextField } from "@mui/material";
+import { IconButton, TextField, Tooltip } from "@mui/material";
 import RemoveIcon from "@mui/icons-material/Remove";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 /**
  *
- * @param {{data:{title: string; imgSrc: string; count: number; cost: number;}} limitCount: number} props
+ * @param {{data:{id:any; title: string; imgSrc: string; count: number; cost: number;} limitCount: number,
+ * onClickEditCount: (e, id: any ,newValue: number)=>{},
+ * onClickDeleteButton: (e, currentItem)=>{}}} props
  * @returns
  */
 export default function Card(props) {
@@ -15,19 +18,33 @@ export default function Card(props) {
     const [cost, setCost] = React.useState(data.cost);
 
     const handleClickEditCount = React.useCallback((e, mode) => {
-        setCount(prev =>
-            mode === "+" ? prev + 1 : mode === "-" ? prev - 1 : prev
-        );
+        setCount(prev => {
+            let newData =
+                mode === "+" ? prev + 1 : mode === "-" ? prev - 1 : prev;
+            if (typeof props.onClickEditCount !== "undefined") {
+                props.onClickEditCount(e, data.id, newData);
+            }
+            return newData;
+        });
     }, []);
 
     const handleTextFieldChange = React.useCallback(e => {
         setCount(e.target.value);
     }, []);
 
+    const handleClickDeleteBtn = React.useCallback(
+        e => {
+            if (typeof props.onClickDeleteButton !== "undefined") {
+                props.onClickDeleteButton(e, data);
+            }
+        },
+        [data, props]
+    );
+
     React.useEffect(() => {
         if (count > 12) {
             setCount(12);
-        }else if (count < 1){
+        } else if (count < 1) {
             setCount(1);
         }
     }, [count]);
@@ -53,6 +70,14 @@ export default function Card(props) {
                 </IconButton>
             </div>
             <div className={styles.costSection}>{cost * count} تومان</div>
+            <Tooltip title="حذف از سبد خرید">
+                <IconButton
+                    className={styles.removeBtn}
+                    onClick={handleClickDeleteBtn}
+                >
+                    <DeleteIcon />
+                </IconButton>
+            </Tooltip>
         </div>
     );
 }

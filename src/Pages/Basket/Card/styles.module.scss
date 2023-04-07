@@ -45,9 +45,15 @@
         align-items: center;
         > .textField {
             width: 100px;
+            * {
+                text-align: center;
+            }
         }
     }
     > .costSection {
         direction: rtl;
+    }
+    > .removeBtn {
+        color: rgb(255, 71, 71);
     }
 }

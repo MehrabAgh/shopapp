@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import styles from "./styles.module.scss";
 import { MdVisibility, MdInsertComment } from "react-icons/md";
+import { numberWithCommas } from "../../myModules";
 
 /**
  *
@@ -54,11 +55,11 @@ const Cards = props => {
                                     </s>
                                     <br />
                                     <b style={{ color: "red" }}>
-                                        {(props.price * props.offer) / 100}
+                                        {numberWithCommas((props.price * props.offer) / 100)}
                                     </b>
                                 </>
                             ) : (
-                                <b style={{ color: "white" }}>{props.price}</b>
+                                <b style={{ color: "white" }}>{numberWithCommas(props.price)}</b>
                             )}
                             <i> تومان </i>
                         </span>
